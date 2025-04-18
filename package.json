@@ -1,0 +1,36 @@
+{
+    "name": "mern-stack development",
+    "version": "1.0.0",
+    "main": "server.js",
+    "dev_name": "Ghs Julian",
+    "author": "Ghs Julian",
+    "github": "https://github.com/ghsjulian",
+    "portfolio": "https://ghsresume.netlify.app",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "keywords": [
+        "Skill Development",
+        "Learning Projects And Codes",
+        "Nodejs Learning Tutorial",
+        "Mongodb Tutorial Practicing",
+        "Full Stack Web Developer Ghs Julian"
+    ],
+    "license": "ISC",
+    "description": "This learning based tutorial where i can develop my mern stack skills.",
+    "dependencies": {
+        "axios": "^1.8.4",
+        "bcryptjs": "^3.0.2",
+        "cookie-parser": "^1.4.7",
+        "cors": "^2.8.5",
+        "dotenv": "^16.5.0",
+        "express": "^5.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.13.2",
+        "multer": "^1.4.5-lts.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    }
+}

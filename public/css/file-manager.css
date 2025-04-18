@@ -1,0 +1,354 @@
+:root {
+    --bg: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 13, 15);
+    --text: rgb(110, 134, 135);
+    --error: rgb(210, 25, 0);
+    --success: rgb(16, 127, 0);
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.app-container {
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    border-radius: 5px;
+    background: var(--black);
+    border: 0.1px solid var(--text);
+    position: relative;
+    overflow: hidden;
+}
+.app-container header {
+    position: absolute;
+    top: -3px;
+    right: 0;
+    left: 20%;
+    width: 80%;
+    background: var(--black);
+    padding: 1rem 0.7rem;
+    z-index: 9000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1px solid var(--text);
+}
+header h3 {
+    color: var(--text);
+    font-weight: 700;
+}
+header .header-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    margin: 0 0.7rem;
+}
+header button {
+    color: var(--text);
+    display: none;
+}
+header button {
+    background: transparent;
+    outline: none;
+    border: none;
+}
+.app-container aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    padding: 0.5rem 0.7rem;
+    background: var(--bg);
+    z-index: 900;
+    border-left: 0.1px solid var(--text);
+    border-right: 0.1px solid var(--text);
+}
+aside h3 {
+    color: var(--text);
+    font-weight: 700;
+}
+aside .links {
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+.links a {
+    text-decoration: none;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    color: var(--text);
+    font-weight: 650;
+}
+.app-container .app {
+    position: relative;
+    width: 80%;
+    left: 20%;
+    height: 100%;
+    background: var(--black);
+    padding: 3.5rem 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+.app .form {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    width: 300px;
+    padding: 1rem;
+    background: var(--black);
+    border: 0.1px solid var(--text);
+    border-radius: 5px;
+    top: 40%;
+    z-index: 900;
+    animation: zoom-in 0.5s linear;
+}
+.form .close-form {
+    outline: none;
+    border: 0.1px solid var(--text);
+    background: var(--black);
+    color: var(--error);
+    font-weight: 800;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    right: -3px;
+}
+.form h3 {
+    color: var(--text);
+    margin: 0.3rem auto;
+    text-align: center;
+    border-bottom: 0.1px solid var(--text);
+}
+.form .error {
+    color: var(--error);
+    border: 0.1px solid var(--error);
+    border-radius: 5px;
+    padding: 0.6rem 0.7rem;
+    margin: 0.3rem auto;
+    text-align: center;
+    width: 100%;
+}
+.form .success {
+    color: var(--success);
+    border: 0.1px solid var(--success);
+    border-radius: 5px;
+    padding: 0.6rem 0.7rem;
+    margin: 0.3rem auto;
+    text-align: center;
+    width: 100%;
+}
+.form input,
+.form button {
+    outline: none;
+    border: 0.1px solid var(--text);
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem auto;
+    width: 100%;
+    background: transparent;
+    color: var(--text);
+}
+.form .rename-btn {
+    color: var(--white);
+    font-weight: 800;
+    display: flex;
+    padding: 0.6rem 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.rename-btn .loader {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: transparent;
+    border-left: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid transparent;
+    animation: loader 0.5s linear infinite;
+}
+.rename-btn span {
+    margin: 0 0.5rem;
+    color: var(--white);
+    font-weight: 900;
+}
+.app h3 {
+    color: var(--text);
+    margin: 0.3rem auto;
+    border-bottom: 0.1px solid var(--text);
+}
+.app .file-list {
+    position: relative;
+    margin: 0.5rem auto;
+    width: 100%;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(auto, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.file-list .col {
+    position: relative;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    border: 0.1px solid var(--text);
+}
+.col .option-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    margin: auto;
+    background: var(--black);
+    padding: 1rem;
+    z-index: 900;
+    display: none;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 5px;
+    border: 0.1px solid var(--text);
+    animation: zoom-in 0.2s linear;
+}
+.option-menu .close-option {
+    outline: none;
+    border: 0.1px solid var(--text);
+    background: var(--black);
+    color: var(--error);
+    font-weight: 800;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.option-menu span {
+    margin: 0.5rem 0;
+    padding: 0.2rem;
+    color: var(--text);
+    font-weight: 600;
+}
+.col img {
+    width: 90px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.col .file-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 0.5rem;
+}
+.file-info span {
+    color: var(--text);
+    margin-bottom: 0.6rem;
+    text-overflow: hidden;
+}
+.file-list .col .option {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 1rem;
+    background: transparent;
+    outline: none;
+    font-weight: 800;
+    font-size: 18px;
+    border: 0.1px solid var(--text);
+    background: var(--black);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    z-index: 890;
+}
+
+/*--> Responsive Design For Mobile <--*/
+@media (max-width: 768px) {
+    .app-container {
+        width: 98%;
+        height: 98%;
+    }
+    .app-container header {
+        width: 100%;
+        left: 0;
+    }
+    header .header-links {
+        display: none;
+    }
+    header button {
+        color: var(--text);
+        display: block;
+    }
+    .app-container aside {
+        left: -25%;
+        width: 0;
+    }
+    .app-container .mobile-menu {
+        width: 65%;
+        left: 0;
+        transition: 0.3s ease-out;
+        z-index: 9000;
+    }
+    .app-container .app {
+        width: 98%;
+        left: 0;
+    }
+    .close-nav {
+        position: absolute;
+        top: 0;
+        left: 65%;
+        right: 0;
+        width: 35%;
+        height: 100%;
+        background: transparent;
+        z-index: 1000;
+    }
+}
+/*--> Creating Loading Animation <--*/
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes zoom-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

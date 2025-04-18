@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>File System Explorer | File Management System</title>
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="./css/file-manager.css" />
+        <link rel="stylesheet" href="./css/upload.file.css" />
+    </head>
+    <body>
+        <div class="app-container">
+            <header>
+                <h3>File Manager</h3>
+                <div class="header-links">
+                    <a href="#">New Folder</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Logout</a>
+                </div>
+                <button id="nav-btn">open</button>
+            </header>
+            <aside>
+                <h3>Main Menu</h3>
+                <div class="links">
+                    <a href="/file-manager">File Dashboard</a>
+                    <a href="#">Create New File</a>
+                    <a href="#">Create Folder</a>
+                    <a href="/upload-files">Upload Files</a>
+                    <a href="#">User Profile</a>
+                    <a href="/login">User Login</a>
+                    <a href="/signup">User Registration</a>
+                </div>
+            </aside>
+            <div id="close-nav"></div>
+            <div class="app">
+                <div class="upload-form">
+                    <h3>Upload Your Files</h3>
+                    <span id="msg"></span>
+                    <label for="files">Select Files To Upload</label>
+                    <input type="file" id="files" multiple hidden />
+                    <button class="upload-btn">
+                        <div id="loader"></div>
+                        <p id="loading">Upload Now</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="js/nav.js"></script>
+        <script type="module" src="js/upload.file.js"></script>
+    </body>
+</html>

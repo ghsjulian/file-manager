@@ -1,0 +1,104 @@
+:root {
+    --bg: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 13, 15);
+    --text: rgb(110, 134, 135);
+    --error: rgb(210, 25, 0);
+    --success: rgb(16, 127, 0);
+}
+
+.app .upload-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    padding: 1rem 1.5rem;
+    background: var(--black);
+    border-radius: 10px;
+    border: 0.1px solid var(--text);
+}
+.upload-form h3 {
+    color: var(--text);
+    margin: 0.3rem auto;
+    border: none;
+}
+.upload-form .error {
+    color: var(--error);
+    border: 0.1px solid var(--error);
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem auto;
+    width: 100%;
+}
+.upload-form .success {
+    color: var(--success);
+    border: 0.1px solid var(--success);
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem auto;
+    width: 100%;
+}
+.upload-form input,
+.upload-form label,
+.upload-form button {
+    width: 100%;
+    margin: 0.7rem auto;
+    padding: 0.7rem 0.7rem;
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    font-weight: 800;
+    text-align: center;
+    border: 0.1px solid var(--text);
+    color: var(--text);
+    transition: 0.3s ease-in;
+}
+.upload-form input:focus {
+    border: 0.1px solid var(--white);
+}
+.upload-form .upload-btn {
+    width: 100%;
+    outline: none;
+    display: flex;
+    margin: 0.6rem auto;
+    align-items: center;
+    justify-content: center;
+    border: 0.1px solid var(--text);
+    background: var(--bg);
+    color: var(--text);
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    transition: 0.5s ease-in;
+}
+
+.upload-btn .loader {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: transparent;
+    border-left: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid transparent;
+    animation: loader 0.5s linear infinite;
+}
+.upload-btn p {
+    margin: 0 0.6rem;
+    font-weight: 800;
+}
+.upload-btn:hover {
+    font-size: 14px;
+    border: 0.1px solid var(--white);
+    color: var(--white);
+}
+
+/*--> Creating Loading Animation <--*/
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

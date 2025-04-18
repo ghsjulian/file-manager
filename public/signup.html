@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create New Account | File Management System</title>
+        <link rel="stylesheet" href="./css/index.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="login">
+                <h3>Create Account</h3>
+                <span id="msg"></span>
+                <input id="name" type="text" placeholder="Enter Name" />
+                <input id="email" type="email" placeholder="Enter Email" />
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Enter Password"
+                />
+                <button class="login-btn">
+                    <div id="loader"></div>
+                    <p id="loading">Create Now</p>
+                </button>
+                <span
+                    >Already have account? <a href="/login">Login</a></span
+                >
+            </div>
+        </div>
+        <script type="module" src="./js/signup.js"></script>
+    </body>
+</html>

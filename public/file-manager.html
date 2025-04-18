@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>File System Explorer | File Management System</title>
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="./css/file-manager.css" />
+    </head>
+    <body>
+        <div class="app-container">
+            <header>
+                <h3>File Manager</h3>
+                <div class="header-links">
+                    <a href="#">New Folder</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Logout</a>
+                </div>
+                <button id="nav-btn">open</button>
+            </header>
+            <aside>
+                <h3>Main Menu</h3>
+                <div class="links">
+                    <a href="/file-manager">File Dashboard</a>
+                    <a href="#">Create New File</a>
+                    <a href="#">Create Folder</a>
+                    <a href="/upload-files">Upload Files</a>
+                    <a href="#">User Profile</a>
+                    <a href="/login">User Login</a>
+                    <a href="/signup">User Registration</a>
+                </div>
+            </aside>
+            <div id="close-nav"></div>
+            <div class="app">
+                <div class="form">
+                    <button class="close-form">x</button>
+                    <h3>Rename File</h3>
+                    <span id="msg" ></span>
+                    <input
+                        id="filename"
+                        type="text"
+                        placeholder="Enter New Filename"
+                    />
+                    <button class="rename-btn">
+                        <div class="loader"></div>
+                        <span class="loading">Rename File</span>
+                    </button>
+                </div>
+                <h3>Your Files And Folders</h3>
+                <div class="file-list">
+                    <div class="col">
+                        <div class="option-menu">
+                            <button class="close-option">X</button>
+                            <span class="open-file">Open File</span>
+                            <span class="rename-file">Rename File</span>
+                            <span class="download-file">Download File</span>
+                            <span class="share-file">Share File</span>
+                            <span class="delete-file">Delete File</span>
+                        </div>
+                        <img src="/icons/client.jpg" />
+                        <div class="file-info">
+                            <span
+                                >Our Main Client message with our new and
+                                with</span
+                            >
+                            <span>Author : Ghs Julian</span>
+                            <span>Uploaded : 05/05/2025</span>
+                            <span>File Type : JPG</span>
+                        </div>
+                        <button class="option">...</button>
+                    </div>
+                    <div class="col">
+                        <div class="option-menu">
+                            <button class="close-option">X</button>
+                            <span>Open File</span>
+                            <span>Rename File</span>
+                            <span>Download File</span>
+                            <span>Share File</span>
+                            <span>Delete File</span>
+                        </div>
+                        <img src="/icons/client.jpg" />
+                        <div class="file-info">
+                            <span
+                                >Our Main Client message with our new and
+                                with</span
+                            >
+                            <span>Author : Ghs Julian</span>
+                            <span>Uploaded : 05/05/2025</span>
+                            <span>File Type : JPG</span>
+                        </div>
+                        <button class="option">...</button>
+                    </div>
+                    <div class="col">
+                        <div class="option-menu">
+                            <button class="close-option">X</button>
+                            <span>Open File</span>
+                            <span>Rename File</span>
+                            <span>Download File</span>
+                            <span>Share File</span>
+                            <span>Delete File</span>
+                        </div>
+                        <img src="/icons/client.jpg" />
+                        <div class="file-info">
+                            <span
+                                >Our Main Client message with our new and
+                                with</span
+                            >
+                            <span>Author : Ghs Julian</span>
+                            <span>Uploaded : 05/05/2025</span>
+                            <span>File Type : JPG</span>
+                        </div>
+                        <button class="option">...</button>
+                    </div>
+                    <div class="col">
+                        <div class="option-menu">
+                            <button class="close-option">X</button>
+                            <span>Open File</span>
+                            <span>Rename File</span>
+                            <span>Download File</span>
+                            <span>Share File</span>
+                            <span>Delete File</span>
+                        </div>
+                        <img src="/icons/client.jpg" />
+                        <div class="file-info">
+                            <span
+                                >Our Main Client message with our new and
+                                with</span
+                            >
+                            <span>Author : Ghs Julian</span>
+                            <span>Uploaded : 05/05/2025</span>
+                            <span>File Type : JPG</span>
+                        </div>
+                        <button class="option">...</button>
+                    </div>
+                    <div class="col">
+                        <div class="option-menu">
+                            <button class="close-option">X</button>
+                            <span>Open File</span>
+                            <span>Rename File</span>
+                            <span>Download File</span>
+                            <span>Share File</span>
+                            <span>Delete File</span>
+                        </div>
+                        <img src="/icons/client.jpg" />
+                        <div class="file-info">
+                            <span
+                                >Our Main Client message with our new and
+                                with</span
+                            >
+                            <span>Author : Ghs Julian</span>
+                            <span>Uploaded : 05/05/2025</span>
+                            <span>File Type : JPG</span>
+                        </div>
+                        <button class="option">...</button>
+                    </div>
+                    <div class="col">
+                        <div class="option-menu">
+                            <button class="close-option">X</button>
+                            <span>Open File</span>
+                            <span>Rename File</span>
+                            <span>Download File</span>
+                            <span>Share File</span>
+                            <span>Delete File</span>
+                        </div>
+                        <img src="/icons/client.jpg" />
+                        <div class="file-info">
+                            <span
+                                >Our Main Client message with our new and
+                                with</span
+                            >
+                            <span>Author : Ghs Julian</span>
+                            <span>Uploaded : 05/05/2025</span>
+                            <span>File Type : JPG</span>
+                        </div>
+                        <button class="option">...</button>
+                    </div>
+                    <div class="col">
+                        <div class="option-menu">
+                            <button class="close-option">X</button>
+                            <span>Open File</span>
+                            <span>Rename File</span>
+                            <span>Download File</span>
+                            <span>Share File</span>
+                            <span>Delete File</span>
+                        </div>
+                        <img src="/icons/client.jpg" />
+                        <div class="file-info">
+                            <span
+                                >Our Main Client message with our new and
+                                with</span
+                            >
+                            <span>Author : Ghs Julian</span>
+                            <span>Uploaded : 05/05/2025</span>
+                            <span>File Type : JPG</span>
+                        </div>
+                        <button class="option">...</button>
+                    </div>
+                    <div class="col">
+                        <div class="option-menu">
+                            <button class="close-option">X</button>
+                            <span>Open File</span>
+                            <span>Rename File</span>
+                            <span>Download File</span>
+                            <span>Share File</span>
+                            <span>Delete File</span>
+                        </div>
+                        <img src="/icons/client.jpg" />
+                        <div class="file-info">
+                            <span
+                                >Our Main Client message with our new and
+                                with</span
+                            >
+                            <span>Author : Ghs Julian</span>
+                            <span>Uploaded : 05/05/2025</span>
+                            <span>File Type : JPG</span>
+                        </div>
+                        <button class="option">...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/nav.js"></script>
+        <script src="js/ui.js"></script>
+    </body>
+</html>

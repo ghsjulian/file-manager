@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 13, 15);
+    --text: rgb(110, 134, 135);
+    --error: rgb(210, 25, 0);
+    --success: rgb(16, 127, 0);
+}
+html {
+    font-size: 90%;
+}
+body {
+    background: var(--bg);
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    padding: 1rem 1.5rem;
+    background: var(--black);
+    border-radius: 10px;
+    border: 0.1px solid var(--text);
+}
+.login h3 {
+    color: var(--text);
+    margin: 0.3rem auto;
+}
+.login .error {
+    color: var(--error);
+    border: 0.1px solid var(--error);
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem auto;
+    width: 100%;
+}
+.login .success {
+    color: var(--success);
+    border: 0.1px solid var(--success);
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem auto;
+    width: 100%;
+}
+.login input,
+.login button {
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 0.7rem 0.7rem;
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    border: 0.1px solid var(--text);
+    color: var(--text);
+    transition: 0.3s ease-in;
+}
+.login input:focus {
+    border: 0.1px solid var(--white);
+}
+.login .login-btn {
+    width: 100%;
+    outline: none;
+    display: flex;
+    margin: .6rem auto;
+    align-items: center;
+    justify-content: center;
+    border: 0.1px solid var(--text);
+    background: var(--bg);
+    color: var(--text);
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    transition: 0.5s ease-in;
+}
+
+.login-btn .loader {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: transparent;
+    border-left: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid transparent;
+    animation: loader 0.5s linear infinite;
+}
+.login-btn p {
+    margin: 0 0.5rem;
+}
+.login .login-btn:hover {
+    font-size: 14px;
+    border: 0.1px solid var(--white);
+    color: var(--white);
+}
+
+.login span {
+    color: var(--text);
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto;
+}
+.login span a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 700;
+    margin: auto 0.4rem;
+}
+/*--> Responsive Desgin <--*/
+@media (max-width: 768px) {
+    .login {
+        width: 250px;
+    }
+}
+/*--> Creating Loading Animation <--*/
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

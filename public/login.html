@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Login | File Management System</title>
+        <link rel="stylesheet" href="./css/index.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="login">
+                <h3>Please Login</h3>
+                <span id="msg"></span>
+                <input id="email" type="email" placeholder="Enter Email" />
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Enter Password"
+                />
+                <button class="login-btn">
+                    <div id="loader"></div>
+                    <p id="loading">Login Now</p>
+                </button>
+                <span>Don't have account? <a href="/signup">Signup</a></span>
+            </div>
+        </div>
+        <script type="module" src="./js/login.js"></script>
+    </body>
+</html>
