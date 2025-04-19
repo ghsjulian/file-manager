@@ -100,8 +100,8 @@ aside .links {
     align-items: center;
 }
 .links a img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     object-fit: cover;
     margin: 0 0.5rem;
 }
