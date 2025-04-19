@@ -7,6 +7,14 @@
         <link rel="stylesheet" href="./css/index.css" />
         <link rel="stylesheet" href="./css/file-manager.css" />
         <link rel="stylesheet" href="./css/upload.file.css" />
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/ico"
+            sizes="512x512"
+            href="favicons/favicon.ico"
+        />
+        <link rel="manifest" href="site.webmanifest.json" />
     </head>
     <body>
         <div class="app-container">
@@ -17,18 +25,42 @@
                     <a href="#">Profile</a>
                     <a href="#">Logout</a>
                 </div>
-                <button id="nav-btn">open</button>
+                <button id="nav-btn">
+                    <img src="/icons/menu.png" />
+                </button>
             </header>
+            
             <aside>
                 <h3>Main Menu</h3>
                 <div class="links">
-                    <a href="/file-manager">File Dashboard</a>
-                    <a href="#">Create New File</a>
-                    <a href="#">Create Folder</a>
-                    <a href="/upload-files">Upload Files</a>
-                    <a href="#">User Profile</a>
-                    <a href="/login">User Login</a>
-                    <a href="/signup">User Registration</a>
+                    <a href="/file-manager">
+                        <img src="icons/folder-management.png" />
+                        File Dashboard</a
+                    >
+                    <a href="#">
+                        <img src="icons/new-file.png" />
+                        Create New File</a
+                    >
+                    <a href="#">
+                        <img src="icons/new-folder.png" />
+                        Create Folder</a
+                    >
+                    <a href="/upload-files">
+                        <img src="icons/upload.png" />
+                        Upload Files</a
+                    >
+                    <a href="#">
+                        <img src="icons/profile-1.png" />
+                        User Profile</a
+                    >
+                    <a href="/login">
+                        <img src="icons/login-1.png" />
+                        User Login</a
+                    >
+                    <a href="/signup">
+                        <img src="icons/signup-1.png" />
+                        User Registration</a
+                    >
                 </div>
             </aside>
             <div id="close-nav"></div>

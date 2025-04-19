@@ -6,6 +6,14 @@
         <title>File System Explorer | File Management System</title>
         <link rel="stylesheet" href="./css/index.css" />
         <link rel="stylesheet" href="./css/file-manager.css" />
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/ico"
+            sizes="512x512"
+            href="favicons/favicon.ico"
+        />
+        <link rel="manifest" href="site.webmanifest.json" />
     </head>
     <body>
         <div class="app-container">
@@ -16,18 +24,41 @@
                     <a href="#">Profile</a>
                     <a href="#">Logout</a>
                 </div>
-                <button id="nav-btn">open</button>
+                <button id="nav-btn">
+                    <img src="/icons/menu.png" />
+                </button>
             </header>
             <aside>
                 <h3>Main Menu</h3>
                 <div class="links">
-                    <a href="/file-manager">File Dashboard</a>
-                    <a href="#">Create New File</a>
-                    <a href="#">Create Folder</a>
-                    <a href="/upload-files">Upload Files</a>
-                    <a href="#">User Profile</a>
-                    <a href="/login">User Login</a>
-                    <a href="/signup">User Registration</a>
+                    <a href="/file-manager">
+                        <img src="icons/folder-management.png" />
+                        File Dashboard</a
+                    >
+                    <a href="#">
+                        <img src="icons/new-file.png" />
+                        Create New File</a
+                    >
+                    <a href="#">
+                        <img src="icons/new-folder.png" />
+                        Create Folder</a
+                    >
+                    <a href="/upload-files">
+                        <img src="icons/upload.png" />
+                        Upload Files</a
+                    >
+                    <a href="#">
+                        <img src="icons/profile-1.png" />
+                        User Profile</a
+                    >
+                    <a href="/login">
+                        <img src="icons/login-1.png" />
+                        User Login</a
+                    >
+                    <a href="/signup">
+                        <img src="icons/signup-1.png" />
+                        User Registration</a
+                    >
                 </div>
             </aside>
             <div id="close-nav"></div>
@@ -35,7 +66,7 @@
                 <div class="form">
                     <button class="close-form">x</button>
                     <h3>Rename File</h3>
-                    <span id="msg" ></span>
+                    <span id="msg"></span>
                     <input
                         id="filename"
                         type="text"
@@ -51,11 +82,17 @@
                     <div class="col">
                         <div class="option-menu">
                             <button class="close-option">X</button>
-                            <span class="open-file">Open File</span>
-                            <span class="rename-file">Rename File</span>
-                            <span class="download-file">Download File</span>
-                            <span class="share-file">Share File</span>
-                            <span class="delete-file">Delete File</span>
+                            <span class="open-file"><img src="icons/open.png" />Open File</span>
+                            <span class="rename-file"><img src="icons/new-document.png" />Rename File</span>
+                            <span class="download-file">
+                                <img src="icons/download.png" />
+                                Download File</span>
+                            <span class="share-file">
+                                <img src="icons/share.png" />
+                                Share File</span>
+                            <span class="delete-file">
+                                <img src="icons/delete.png" />
+                                Delete File</span>
                         </div>
                         <img src="/icons/client.jpg" />
                         <div class="file-info">

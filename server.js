@@ -14,7 +14,8 @@ const corsOptions = {
     origin: [
         "http://localhost:3000",
         "http://localhost:8158",
-        "http://localhost:8000"
+        "http://localhost:8000",
+        "https://f245-2400-c600-531f-4078-00-1.ngrok-free.app"
     ], // Specify the allowed origin(s)
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
@@ -48,6 +49,7 @@ app.use("/api", fileRoutes);
 app.use("/css", express.static(publicPath + "css"));
 app.use("/js", express.static(publicPath + "js"));
 app.use("/icons", express.static(publicPath + "icons"));
+app.use("/favicons", express.static(publicPath + "favicons"));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Serve The Files As Routes...
