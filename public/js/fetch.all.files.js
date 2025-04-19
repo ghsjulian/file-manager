@@ -218,7 +218,12 @@ window.onload = async () => {
     viewImg.forEach(col => {
         col.children[1].onclick = e => {
             e.preventDefault();
-            openFile(col.children[1].src);
+            let tag = col.children[2];
+            let filename = tag.children[0].textContent;
+            let parts = filename.split(":");
+            let fileurl = parts[1].trim();
+            let origin = api.split("/")[2];
+            openFile(`${api.split("/")[0]}//${origin}/uploads/${fileurl}`);
         };
     });
 };
