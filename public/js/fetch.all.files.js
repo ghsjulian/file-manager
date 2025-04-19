@@ -11,6 +11,43 @@ const getType = file => {
     return name[1];
 };
 
+const detectFile = fileType => {
+    switch (fileType) {
+        case "txt":
+            return "/icons/txt-1.png";
+            break;
+        case "pdf":
+            return "/icons/pdf.png";
+            break;
+        case "doc":
+            return "/icons/doc.png";
+            break;
+        case "mp4":
+            return "/icons/mp4.png";
+            break;
+        case "mp3":
+            return "/icons/mp3.png";
+            break;
+        case "ogg":
+            return "/icons/ogg.png";
+            break;
+        case "bin":
+            return "/icons/bin.png";
+            break;
+        default:
+            break;
+    }
+};
+
+const getFomatedDate = mongoDate => {
+    const date = new Date(mongoDate);
+    const day = String(date.getDate()).padStart(2, "0"); // Ensure two digits
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based
+    const year = date.getFullYear();
+    // Format the date as DD/MM/YYYY
+    return `${day}/${month}/${year}`;
+};
+
 const updateRenameOnUi = (element, newName) => {
     let name = getName(newName);
     const root = element.parentElement;
@@ -33,7 +70,13 @@ const updateUi = files => {
             fileInfo.className = "file-info";
             button.className = "option";
             button.textContent = "...";
-            img.src = file;
+            const ext = ["png", "jpg", "jpeg", "bmp", "gif"];
+
+            if (ext.includes(getType(file))) {
+                img.src = file;
+            } else {
+                img.src = detectFile(getType(file));
+            }
 
             const closeBtn = document.createElement("button");
             const openFile = document.createElement("span");
@@ -50,8 +93,8 @@ const updateUi = files => {
             fileName.setAttribute("id", "ghs-" + index);
             fileName.textContent = "File Name : " + getName(file);
             fileType.textContent = "File Type : " + getType(file);
-            author.textContent = "Author : " + files.id;
-            date.textContent = "Date : 12/05/2025";
+            author.textContent = "Author : " + files.author;
+            date.textContent = "Date : " + getFomatedDate(files.createdAt);
 
             fileInfo.appendChild(fileName);
             fileInfo.appendChild(fileType);
@@ -109,11 +152,20 @@ const fetchAllFiles = async () => {
             credentials: "include"
         });
         const response = await request.json();
-        if (response.success) {
+        if (response.files.files.length > 0) {
             updateUi(response.files);
+        } else {
+            fileList.innerHTML = `
+                    <div class="col">
+                    <h3 style='text-align : center'>No File Uploaded Yet !</h3>
+                    </div>`;
         }
     } catch (error) {
         console.log(error);
+        fileList.innerHTML = `
+                    <div class="col">
+                    <h3 style='text-align : center'>${error.message}</h3>
+                    </div>`;
     }
 };
 
@@ -121,6 +173,7 @@ window.onload = async () => {
     await fetchAllFiles();
     /*File More Option Button */
     const moreBtn = document.querySelectorAll(".option");
+    const viewImg = document.querySelectorAll(".col");
 
     moreBtn.forEach(btn => {
         btn.onclick = e => {
@@ -142,18 +195,30 @@ window.onload = async () => {
                             renameFile(info.children[i], btn, fileUrl);
                             break;
                         case "share-file":
+                            shareFile(fileUrl);
                             break;
                         case "download-file":
+                            downloadFile(fileUrl);
                             break;
                         case "delete-file":
+                            deleteFile(btn, fileUrl);
                             break;
                         case "open-file":
+                            openFile(fileUrl);
                             break;
                         default:
                             break;
                     }
                 };
             }
+        };
+    });
+
+    // View All Images...
+    viewImg.forEach(col => {
+        col.children[1].onclick = e => {
+            e.preventDefault();
+            openFile(col.children[1].src);
         };
     });
 };
@@ -236,6 +301,78 @@ const renameFile = (option, btn, url) => {
         }, 3000);
     };
 };
+const deleteFile = async (btn, url) => {
+    const element = btn.parentElement;
+
+    try {
+        const token = localStorage.getItem("token") || null;
+        const request = await fetch(api + "/files/delete-file", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                Authorization: token
+            },
+            credentials: "include",
+            body: JSON.stringify({ file: url })
+        });
+        const response = await request.json();
+        if (response.success) {
+            element.remove();
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+const shareFile = url => {};
+
+const openVideo = url => {
+    const viewForm = document.querySelector("#view-video");
+    const video = document.querySelector("#video");
+    video.src = url;
+    viewForm.style.display = "flex";
+};
+const openAudio = url => {
+    const viewForm = document.querySelector("#view-audio");
+    const audio = document.querySelector("#audio");
+    audio.src = url;
+    viewForm.style.display = "flex";
+};
+
+const openFile = url => {
+    const viewForm = document.querySelector("#view-img");
+    const view = document.querySelector("#view");
+    const ext = ["png", "jpg", "jpeg", "bmp", "gif"];
+    if (ext.includes(getType(url))) {
+        view.src = url;
+        viewForm.style.display = "flex";
+    } else if (getType(url) === "mp4") {
+        openVideo(url);
+    } else if (getType(url) === "mp3") {
+        openAudio(url);
+    } else {
+        return;
+    }
+};
+document.querySelector(".view-close-btn").onclick = e => {
+    e.preventDefault();
+    document.querySelector("#view-img").style.display = "none";
+};
+document.querySelector(".video-close").onclick = e => {
+    e.preventDefault();
+    document.querySelector("#view-video").style.display = "none";
+};
+document.querySelector(".audio-close").onclick = e => {
+    e.preventDefault();
+    document.querySelector("#view-audio").style.display = "none";
+};
+
+const downloadFile = url => {
+    const a = document.createElement("a");
+    a.setAttribute("download", getName(url));
+    a.href = url;
+    a.click();
+};
+
 document.querySelector(".close-form").onclick = e => {
     e.preventDefault();
     const form = document.querySelector(".app .form");

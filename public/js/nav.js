@@ -11,8 +11,8 @@ navBtn.onclick = e => {
     let src = parts[parts.length - 1];
     if (src === "menu.png") {
         closeBtn.src = "/icons/close.png";
-        closeBtn.style.width = "25px";
-        closeBtn.style.height = "25px";
+        closeBtn.style.width = "21px";
+        closeBtn.style.height = "21px";
     } else {
         closeBtn.src = "/icons/menu.png";
         closeBtn.style.width = "25px";

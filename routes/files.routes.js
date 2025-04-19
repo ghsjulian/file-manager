@@ -13,5 +13,6 @@ router.post("/files/upload",isLogin,uploader.fields([
 
 router.get("/files/all-files",isLogin,FilesController.getFiles) 
 router.post("/files/rename-file",isLogin,FilesController.renameFile) 
+router.post("/files/delete-file",isLogin,FilesController.deleteFile) 
 
 module.exports = router

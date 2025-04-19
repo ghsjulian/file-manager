@@ -2,6 +2,7 @@ require("dotenv").config("../.env");
 const path = require("path");
 const fileModel = require("../models/files.model");
 const rename = require("../functions/rename.file");
+const deletefile = require("../functions/delete.file");
 
 class FilesController {
     async uploadFiles(req, res) {
@@ -24,6 +25,7 @@ class FilesController {
             } else {
                 fileDocument = await new fileModel({
                     id: req.user._id,
+                    author: req.user.name,
                     files: fileList
                 });
                 await fileDocument.save();
@@ -50,13 +52,13 @@ class FilesController {
                 });
             } else {
                 return res.status(404).json({
-                    success: false,
+                    files: [],
                     message: "No File Found In This Server !"
                 });
             }
         } catch (error) {
             return res.status(505).json({
-                success: false,
+                files: [],
                 message: error.message || "Something Went Wrong"
             });
         }
@@ -82,9 +84,9 @@ class FilesController {
                     });
                 } else {
                     return res.status(404).json({
-                    success: false,
-                    message: "No File Exist In The Server !"
-                });
+                        success: false,
+                        message: "No File Exist In The Server !"
+                    });
                 }
             } else {
                 return res.status(404).json({
@@ -99,23 +101,23 @@ class FilesController {
             });
         }
     }
+    async deleteFile(req, res) {
+        const { file } = req.body;
+        try {
+            // Call the function to delete the file from the storage
+            await deletefile(file);
+            // Update the database to remove the file from the user's files array
+            const result = await fileModel.updateOne(
+                { id: req.user._id }, // Find the document with the specific user id
+                { $pull: { files: file } } // Use $pull to remove the file from the array
+            );
+                return res.status(200).json({ success:true,message: "File Deleted Successfully" });
+        } catch (error) {
+           return res.status(500).json({success:false,
+                message: "An error occurred while deleting the file."
+            });
+        }
+    }
 }
 
 module.exports = new FilesController();
-
-/*
-// Original array
-let array = ["ghs", "ghhh", "hjjh"];
-
-// Element to find and the new element to replace it with
-let elementToFind = "ghhh";
-let newElement = "newValue";
-
-// Use map to create a new array with the replaced element
-let updatedArray = array.map(item => {
-    return item === elementToFind ? newElement : item;
-});
-
-// Output the updated array
-console.log(updatedArray);
-*/
