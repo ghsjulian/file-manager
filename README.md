@@ -1,6 +1,6 @@
-# Mern Stack Tutorial
+# File Manager System
 
-#### Project Name :  Skill Development 
+#### Project Name :  File Management System 
 
 #### Project Type : Learning Based
 
@@ -22,7 +22,7 @@
 
 #### Live Demo : <a href="https://" target="_blank">View Demo </a>
 
-#### Start Date : 12 April 2025
+#### Start Date : 17 April 2025
 
 #### End Date : Working...
 
@@ -30,10 +30,11 @@
 
 ## About This Tutorial 
 
-**This is an e commerce admin dashboard where admin can handle site, such as adding products and handling the orders payment etc and may more features. Admin can cancel order and manage the e commerce store. So let's see what the admin can do actually.**
+
+**This is a file management system using Nodejs and Rest Aapis. It is fully customized and very user friendly. I have designed it using custom css and codes. It is simply learning and skills development project which has built by using my phone!**
 
 
-**Once the admin logged in he can view new orders or pending order. He can update any products and add new product in the e commerce store.**
+**In this project i have learnet so much this like jsonwebtoken and bcryptjs and more ! Here has been given all the functionality and options.**
 
 
 ---
@@ -48,11 +49,16 @@
 
 -   **Logout From Account**
 
--   **Edit User Profile**
+-   **Multer Config**
 
--   **Live Search A User**
+-   **Rest API Development**
+   
+-   **Jsonwebtoken And Bcryptjs**
 
--   **See Users Online Visibility**
+-   **File System**
+
+-   **Mongodb Databases**
+
 
 -   **More...**
 
