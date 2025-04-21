@@ -24,7 +24,7 @@
 
 #### Start Date : 17 April 2025
 
-#### End Date : Working...
+#### End Date : 21 April 2025
 
 ---
 
@@ -69,11 +69,8 @@
 **Copy the command bellow and paste on your terminal !**
 
 ```bash
-git clone https://github.com/Ghsjulian/talk-tuie.git
-cd talk-tuie
-cd client
-npm install && npm run dev
-cd server
+git clone https://github.com/ghsjulian/file-manager.git
+cd file-manager
 npm install && npm run dev
 ```
 
