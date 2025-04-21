@@ -82,21 +82,26 @@ npm install && npm run dev
 
 #### Screensots And Demo (Desktop Mode) :
 
-<img src="/ss/desk1.jpg" width="600" height="250px"/><br/><br/>
-<img src="/ss/desk2.jpg" width="600" height="250px"/><br/><br/>
-<img src="/ss/desk3.jpg" width="600" height="250px"/><br/><br/>
-<img src="/ss/desk4.jpg" width="600" height="250px"/><br/><br/>
+<img src="/ss/desk-1.jpg" width="600" height="250px"/><br/><br/>
+<img src="/ss/desk-2.jpg" width="600" height="250px"/><br/><br/>
+<img src="/ss/desk-3.jpg" width="600" height="250px"/><br/><br/>
+<img src="/ss/desk-4.jpg" width="600" height="250px"/><br/><br/>
+<img src="/ss/desk-5.jpg" width="600" height="250px"/><br/><br/>
+<img src="/ss/desk-6.jpg" width="600" height="250px"/><br/><br/>
 
 
 #### Screensots And Demo (Mobile Mode) :
 
-<img src="/ss/m1.jpg" width="365px" height="710px"/><br/><br/>
-<img src="/ss/m2.jpg" width="365px" height="710px"/><br/><br/>
-<img src="/ss/m3.jpg" width="365px" height="710px"/><br/><br/>
-<img src="/ss/m4.jpg" width="365px" height="710px"/><br/><br/>
-<img src="/ss/m5.jpg" width="365px" height="710px"/><br/><br/>
-<img src="/ss/m6.jpg" width="365px" height="710px"/><br/><br/>
-<img src="/ss/m7.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-1.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-2.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-3.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-4.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-5.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-6.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-7.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-8.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-9.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/ss/m-10.jpg" width="365px" height="710px"/><br/><br/>
 
 
 #### Thank You !

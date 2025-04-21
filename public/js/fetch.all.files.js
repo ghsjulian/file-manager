@@ -152,13 +152,10 @@ const fetchAllFiles = async () => {
             credentials: "include"
         });
         const response = await request.json();
-        if (response.files.files.length > 0) {
+        if (response.success) {
             updateUi(response.files);
         } else {
-            fileList.innerHTML = `
-                    <div class="col">
-                    <h3 style='text-align : center'>No File Uploaded Yet !</h3>
-                    </div>`;
+            throw new Error(response.message);
         }
     } catch (error) {
         console.log(error);

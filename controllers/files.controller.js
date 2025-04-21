@@ -53,12 +53,14 @@ class FilesController {
             } else {
                 return res.status(404).json({
                     files: [],
+                    success: false,
                     message: "No File Found In This Server !"
                 });
             }
         } catch (error) {
             return res.status(505).json({
                 files: [],
+                success : false,
                 message: error.message || "Something Went Wrong"
             });
         }
